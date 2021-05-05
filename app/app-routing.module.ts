@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { LobComponent } from './lob/lob.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { RegistrationComponent } from './registration/registration.component';
+
+
+const routes: Routes = [
+  {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path :'home',component:HomeComponent},
+  {path :'lob',component:LobComponent},
+  
+  {path :'registration',component:RegistrationComponent},
+  { path: '**', component: PagenotfoundComponent}
+  
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
